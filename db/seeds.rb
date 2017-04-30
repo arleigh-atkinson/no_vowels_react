@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+json = ActiveSupport::JSON.decode(File.read('db/countries.json'))
+
+json.each do |a|
+  CapitalCountry.create!(name: a['capital'] + a['name']['common'])
+end

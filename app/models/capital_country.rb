@@ -1,0 +1,2 @@
+class CapitalCountry < ApplicationRecord
+end
