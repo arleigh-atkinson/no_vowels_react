@@ -16,7 +16,9 @@ var Answer = React.createClass({
   },
 
   checkAnswer(answer, correctAnswer) {
-    if(answer == correctAnswer){
+    var sanitizedAnswer = answer.replace(/ /g,'').toLowerCase();
+    var sanitizedCorrectAnswer = correctAnswer.replace(/ /g,'').toLowerCase();
+    if(sanitizedAnswer == sanitizedCorrectAnswer){
       alert('correct!');
     }
     else {
@@ -27,7 +29,7 @@ var Answer = React.createClass({
 
   render() {
     return (
-      <div className="row">
+      <div className="col-sm-4">
       <form onSubmit={this.handleSubmit}>
         <label>
           Answer:

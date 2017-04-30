@@ -9,5 +9,5 @@
 json = ActiveSupport::JSON.decode(File.read('db/countries.json'))
 
 json.each do |a|
-  CapitalCountry.create!(name: a['capital'] + a['name']['common'])
+  CapitalCountry.create!(name: (a['capital'] + " " + a['name']['common']))
 end
