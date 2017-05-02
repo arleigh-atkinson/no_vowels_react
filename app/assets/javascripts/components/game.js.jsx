@@ -1,4 +1,4 @@
-var Game = React.createClass({
+class Game extends React.Component({
   getInitialState() {
     return {
       countries: this.props.country_pairs

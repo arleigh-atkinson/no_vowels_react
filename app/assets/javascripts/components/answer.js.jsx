@@ -1,4 +1,4 @@
-var Answer = React.createClass({
+class Answer extends React.Component({
   getInitialState() {
     return {
       value: this.props.answer,
