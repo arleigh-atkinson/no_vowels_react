@@ -1,19 +1,17 @@
-class Answer extends React.Component({
-  getInitialState() {
-    return {
-      value: this.props.answer,
-      correctAnswer: this.props.correct_answer
-    }
-  },
+class Answer extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {value: this.props.answer, correctAnswer: this.props.correct_answer};
+  }
 
   handleChange(event) {
     this.setState({value: event.target.value});
-  },
+  }
 
   handleSubmit(event) {
     this.checkAnswer(this.state.value, this.props.correct_answer)
     event.preventDefault();
-  },
+  }
 
   checkAnswer(answer, correctAnswer) {
     var sanitizedAnswer = answer.replace(/ /g,'').toLowerCase();
@@ -25,7 +23,7 @@ class Answer extends React.Component({
       alert('incorrect, try again');
       this.setState({value: ""})
     }
-  },
+  }
 
   render() {
     return (
@@ -40,4 +38,4 @@ class Answer extends React.Component({
       </div>
     )
   }
-});
+}

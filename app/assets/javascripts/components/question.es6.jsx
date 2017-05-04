@@ -1,10 +1,8 @@
-class Question extends React.Component({
-  getInitialState() {
-    return {
-      answer: this.props.answer,
-      noVowels: this.props.noVowels
-    }
-  },
+class Question extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {answer: this.props.answer, noVowels: this.props.noVowels};
+  }
 
   render() {
     return (
@@ -17,4 +15,4 @@ class Question extends React.Component({
       </div>
     );
   }
-});
+}

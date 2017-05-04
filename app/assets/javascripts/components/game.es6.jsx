@@ -1,10 +1,8 @@
-class Game extends React.Component({
-  getInitialState() {
-    return {
-      countries: this.props.country_pairs
+class Game extends React.Component{
+  constructor(props) {
+      super(props);
+      this.state = {countries: this.props.country_pairs};
     }
-  },
-
   render() {
     questions = this.state.countries.map(function(country){
       return(
@@ -22,4 +20,4 @@ class Game extends React.Component({
       </div>
     )
   }
-});
+}
